@@ -808,4 +808,72 @@ header {
     .form-group textarea {
         padding: 0.6rem;
     }
+}
+
+/* Estilos para campos obrigatórios e erros */
+.required {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.required-fields-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+    border-color: var(--primary-color);
+    background-color: rgba(230, 57, 70, 0.05);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group select {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Animação de shake para campos com erro */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error {
+    animation: shake 0.5s ease-in-out;
 } 
