@@ -269,6 +269,46 @@
             </div>
         </section>
 
+        <section class="store-info">
+            <h2>Informações do Estabelecimento</h2>
+            <div class="info-container">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Endereço</h3>
+                    <p>Rua dos Espetinhos, 123</p>
+                    <p>Bairro Centro - São Paulo/SP</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Formas de Pagamento</h3>
+                    <ul>
+                        <li>Dinheiro</li>
+                        <li>Cartão de Crédito</li>
+                        <li>Cartão de Débito</li>
+                        <li>PIX</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Segunda a Sábado: 11h às 23h</p>
+                    <p>Domingo: 11h às 22h</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Observações</h3>
+                    <ul>
+                        <li>Pedidos com mais de 5 itens: 10% de desconto</li>
+                        <li>Delivery disponível em um raio de 5km</li>
+                        <li>Taxa de entrega: R$ 5,00</li>
+                        <li>Pedidos acima de R$ 50,00: entrega grátis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -305,9 +345,37 @@
             <span class="close" onclick="closeCart()">&times;</span>
             <h2>Seu Carrinho</h2>
             <ul id="cart-items"></ul>
-            <div class="cart-total">
-                Total: <span id="cart-total-value">R$ 0,00</span>
+            <div class="cart-total">Total: R$ <span id="cart-total">0.00</span></div>
+            
+            <div class="order-details">
+                <h3>Detalhes do Pedido</h3>
+                
+                <div class="form-group">
+                    <label for="customer-name">Nome:</label>
+                    <input type="text" id="customer-name" placeholder="Seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-address">Endereço de Entrega:</label>
+                    <textarea id="customer-address" placeholder="Rua, número, bairro, complemento..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment-method">Forma de Pagamento:</label>
+                    <select id="payment-method" required>
+                        <option value="">Selecione a forma de pagamento</option>
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="cartao">Cartão de Crédito/Débito</option>
+                        <option value="pix">PIX</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="change-group" style="display: none;">
+                    <label for="payment-change">Troco para quanto?</label>
+                    <input type="number" id="payment-change" placeholder="Valor em reais" step="0.01">
+                </div>
             </div>
+
             <a id="whatsapp-link" class="whatsapp-btn" target="_blank">Finalizar pedido no WhatsApp</a>
         </div>
     </div>
