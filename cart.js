@@ -47,13 +47,21 @@ function removeFromCart(idx) {
 }
 
 function updateWhatsappLink() {
-    const phone = '5599999999999'; // Substitua pelo número do seu WhatsApp com DDD e país
-    let msg = 'Olá! Gostaria de fazer um pedido:%0A';
+    const phone = '556892272523'; // Número do WhatsApp com DDD e país
+    let msg = '🍖 *PEDIDO - ESPETINHOS* 🍖%0A%0A';
+    msg += 'Olá! Gostaria de fazer o seguinte pedido:%0A%0A';
+    msg += '*📋 Itens do Pedido:*%0A';
     cart.forEach(item => {
-        msg += `- ${item.name} x${item.qty} (R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')})%0A`;
+        msg += `• ${item.name}%0A`;
+        msg += `  Quantidade: ${item.qty}%0A`;
+        msg += `  Valor Unitário: R$ ${item.price.toFixed(2).replace('.', ',')}%0A`;
+        msg += `  Subtotal: R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}%0A%0A`;
     });
     const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-    msg += `%0ATotal: R$ ${total.toFixed(2).replace('.', ',')}`;
+    msg += '*💰 Resumo do Pedido*%0A';
+    msg += `Total de Itens: ${cart.reduce((sum, i) => sum + i.qty, 0)}%0A`;
+    msg += `Valor Total: R$ ${total.toFixed(2).replace('.', ',')}%0A%0A`;
+    msg += 'Aguardo a confirmação do pedido. Obrigado! 🙏';
     document.getElementById('whatsapp-link').href = `https://wa.me/${phone}?text=${msg}`;
 }
 
