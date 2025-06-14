@@ -279,7 +279,7 @@
             </div>
             <div class="footer-info">
                 <h3>Contato</h3>
-                <p><i class="fas fa-phone"></i> +55 68 9227-2523</p>
+                <p><i class="fas fa-phone"></i> +55 68 9208-8865</p>
                 <p><i class="fas fa-map-marker-alt"></i> Rua dos Espetinhos, 123</p>
             </div>
             <div class="social-media">
@@ -300,19 +300,24 @@
     </div>
 
     <!-- Modal do carrinho -->
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-modal-content">
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
             <span class="close" onclick="closeCart()">&times;</span>
             <h2>Seu Carrinho</h2>
             <ul id="cart-items"></ul>
             <div class="cart-total">
-                Total: <span id="cart-total-value">R$ 0,00</span>
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
             </div>
-            <a id="whatsapp-link" class="whatsapp-btn" target="_blank">Finalizar pedido no WhatsApp</a>
+            <div id="order-form"></div>
+            <div class="cart-actions">
+                <button onclick="updateOrderInfo()" class="update-order-btn">Atualizar Pedido</button>
+                <a id="whatsapp-link" href="#" target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido
+                </a>
+            </div>
         </div>
     </div>
-
-    <script src="cart.js"></script>
 
     <script>
         let currentSlide = 0;
@@ -342,5 +347,13 @@
         // Auto-play do carrossel
         setInterval(() => moveCarousel(1), 5000);
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa o carrinho
+            updateCartCount();
+        });
+    </script>
+    <script src="cart.js"></script>
 </body>
 </html> 
