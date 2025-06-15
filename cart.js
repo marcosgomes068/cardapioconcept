@@ -135,7 +135,7 @@ function updateWhatsappLink() {
     const whatsappLink = document.getElementById('whatsapp-link');
     if (!whatsappLink) return;
     
-    const phone = '556892088865'; // Número do WhatsApp com DDD e país
+    const phone = ''; // Número do WhatsApp com DDD e país
     let msg = '🍖 *PEDIDO - ESPETINHOS* 🍖%0A%0A';
     
     // Informações do cliente
